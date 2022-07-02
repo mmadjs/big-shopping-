@@ -1,0 +1,40 @@
+.mainNavigation{
+    width: 100%;
+    height: 5rem;
+    background-color: #ede9fe;
+
+}
+
+
+nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+ul{
+    display: flex;
+    margin: 10px;
+    justify-content: space-between;
+    width: 50%;
+}
+li{
+color: red;
+text-decoration: none;
+}
+
+a{
+    text-decoration: none;
+    font-size: 20px;
+    color: black;
+    padding: 10px;
+border-radius: 20%;
+}
+
+a:hover .activeLink{
+    color:rgb(246, 250, 7);
+    background-color: rgb(4, 214, 214);
+
+}
