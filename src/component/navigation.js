@@ -1,9 +1,11 @@
 import Layout from "../layot/layot"
 import {  Link, NavLink, Route } from "react-router-dom";
 import style from '../component/navigation.moudle.css'
+import { useCart } from "../providers/CartProvider";
 
 
 const Navigation = () => {
+    const {cart}=useCart()
     return ( 
         <header className="mainNavigation">
             <nav>
@@ -11,8 +13,13 @@ const Navigation = () => {
                     <li>
                         <NavLink  to='/' >home</NavLink>
                     </li>
-                    <li>
-                        <NavLink to='/cart' >card</NavLink>
+                    <li className="linkCart">
+                        <NavLink to='/cart' >cart
+                        <span>
+                        {cart.length}
+
+                        </span>
+                        </NavLink>
                     </li>
                 </ul>
             </nav>

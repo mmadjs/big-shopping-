@@ -3,6 +3,7 @@
   padding: 0;
   margin: 0;
   list-style: none;
+  direction: ltr;
 }
 body{
   background-color: #ccc;
@@ -57,13 +58,7 @@ body{
   #4f46e5;
   background-color: rgb(15, 207, 221);
   border-radius: 10%;
-}
-.primary{
-
-  /* background-color: #7c3aed; */
-
-
-  ;
+  cursor: pointer;
 }
 
 

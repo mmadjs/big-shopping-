@@ -38,3 +38,21 @@ a:hover .activeLink{
     background-color: rgb(4, 214, 214);
 
 }
+.linkCart{
+    position: relative;
+}
+
+.mainNavigation span{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: red;
+    color: #fff;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: absolute;
+    right: -.4rem;
+    top:-.6rem;
+}
