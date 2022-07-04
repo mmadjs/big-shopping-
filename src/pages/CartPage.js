@@ -1,7 +1,10 @@
 import Layout from "../layot/layot";
 import { useCart, useCartAction } from "../providers/CartProvider";
 import "../pages/CartPage.css";
+import {  Link, NavLink, Route } from "react-router-dom";
+
 const CartPage = () => {
+
   const { cart, total } = useCart();
   const dispatch = useCartAction();
   const increamentHanlder = (cartItem) => {
@@ -66,6 +69,9 @@ export default CartPage;
         <p>your price</p>
         <p>{total}</p>
       </div>
+      <Link to="/checkout">
+      <button  className="btn" >cehckout</button>
+      </Link>
     </section>
   );
 };

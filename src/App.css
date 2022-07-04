@@ -60,7 +60,14 @@ body{
   border-radius: 10%;
   cursor: pointer;
 }
+input:focus{
+border: 1px solid blue;
+}
 
+button:disabled{
+  cursor: not-allowed;
+  background-color: grey;
+}
 
 
 .footer{
