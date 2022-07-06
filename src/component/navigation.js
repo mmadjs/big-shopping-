@@ -2,9 +2,14 @@ import Layout from "../layot/layot";
 import { Link, NavLink, Route } from "react-router-dom";
 import style from "../component/navigation.moudle.css";
 import { useCart } from "../providers/CartProvider";
+import { useAuth } from "../providers/Authprovider";
+import {BsBagCheckFill} from 'react-icons/bs'
+import {FaUserAlt } from 'react-icons/fa'
+import {HiOutlineLogin} from  'react-icons/hi'
 
 const Navigation = () => {
   const { cart } = useCart();
+  const userdata = useAuth()
   return (
     <header className="mainNavigation">
       <nav>
@@ -14,17 +19,20 @@ const Navigation = () => {
           </li>
           <li className="linkCart">
             <NavLink to="/cart">
-              cart
+              <BsBagCheckFill/>
               <span>{cart.length}</span>
             </NavLink>
           </li>
-          <li>
-            <NavLink to="/login">login</NavLink>
-          </li>
-          <li>
-            <NavLink to="/signup">signup</NavLink>
-          </li>
+        
+          
         </ul>
+        <ul>
+          <li>
+            <NavLink to={userdata ?"/profile" : "/login"} >
+              {userdata ? <FaUserAlt /> : <HiOutlineLogin/>}
+              </NavLink>
+          </li>
+          </ul>
       </nav>
     </header>
   );

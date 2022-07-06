@@ -10,9 +10,12 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Login from './pages/Loginpage';
 import Signup from './pages/Signppage';
+import AuthProvider from './providers/Authprovider';
+import Profile from './pages/Profile';
 function App() {
   return (
-   
+    <AuthProvider>
+
     <CartProvider>
 <ToastContainer/>
       <Routes>
@@ -22,8 +25,11 @@ function App() {
       <Route  path='/checkout' element={<Checkout/>} />
       <Route  path='/login' element={<Login/>} />
       <Route  path='/signup' element={<Signup/>} />
+      <Route path='/profile' element={<Profile/>} />
    </Routes>
    </CartProvider>
+   </AuthProvider>
+
 
 
      

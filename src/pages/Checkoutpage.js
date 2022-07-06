@@ -1,10 +1,12 @@
 import Layout from "../layot/layot";
-
+import Checkoutdetail from "../component/checkout/Checkout";
+import { CartSummery } from "./CartPage";
 const Checkout = () => {
     return ( 
         <Layout>
             <div>
-        Checkout
+        <Checkoutdetail/>
+        
     </div>
         </Layout>
      );

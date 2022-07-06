@@ -3,6 +3,7 @@ import { useCart, useCartAction } from "../providers/CartProvider";
 import "../pages/CartPage.css";
 import {  Link, NavLink, Route } from "react-router-dom";
 
+
 const CartPage = () => {
 
   const { cart, total } = useCart();
@@ -50,7 +51,7 @@ const CartPage = () => {
 
 export default CartPage;
 
- const CartSummery = () => {
+export const CartSummery = () => {
   const {cart,total} = useCart()
   const originalPrice = cart.length ?  cart.reduce((acc,curr)=>acc+curr.quntity *curr.price,0):0;
   return (
@@ -69,7 +70,7 @@ export default CartPage;
         <p>your price</p>
         <p>{total}</p>
       </div>
-      <Link to="/checkout">
+      <Link to="/signup?redirect=checkout">
       <button  className="btn" >cehckout</button>
       </Link>
     </section>

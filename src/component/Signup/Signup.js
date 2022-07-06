@@ -2,10 +2,12 @@ import { useFormik } from "formik";
 import Input from "../../common/Input";
 import * as Yup from "yup";
 import "./Signup.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { signUPuser } from "../../services/Signupservice";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { toast } from "react-toastify";
+import { useAuth, useAuthAction } from "../../providers/Authprovider";
+import { useQuery } from "../../Hooks/useQuery";
 const initialValues = {
   name: "",
   email: "",
@@ -35,8 +37,22 @@ const validationSchema = Yup.object({
     .oneOf([Yup.ref("password"), null], "Passwords must match")
     ,
 });
+
 const SignupForm = () => {
+  
+  const navigate = useNavigate()
   const [error,seterrr]=useState()
+  const SetAuth =useAuthAction()
+  const Auth =useAuth()
+  const query = useQuery()
+  const redirect = query.get("redirect") || "/"
+    console.log(redirect);
+    useEffect(() => {
+      if(Auth)navigate(`/${redirect}`)
+    }, [redirect,Auth]);
+
+
+
   const onSubmit = async (values) => {
     console.log(values);
     const { name, email, phoneNumber, password } = values;
@@ -50,6 +66,10 @@ const SignupForm = () => {
     try {
       const { data } = await signUPuser(UserData);
       console.log(data);
+      SetAuth(data)
+      localStorage.setItem("authState",JSON.stringify(data))
+      seterrr(null)
+      navigate(redirect)
     } catch (error) {
       console.log(error.response.data.message);
       if(error.response && error.response.data.message){
@@ -102,7 +122,7 @@ const SignupForm = () => {
           sign up
         </button>
         {error && <p style={{color:"red"}} >{error}</p>}
-        <Link to="/login">
+        <Link to={`/login?redirect=${redirect}`}>
           <p style={{ color: "blue", marignTop: "10px" }}>alerady login ??</p>
         </Link>
       </form>

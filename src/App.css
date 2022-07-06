@@ -1,32 +1,31 @@
-*{
+* {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
   list-style: none;
   direction: ltr;
 }
-body{
+body {
   background-color: #ccc;
 }
-.App{
-  text-align: center  ;
+.App {
+  text-align: center;
 }
 
-.product-list{
+.product-list {
   display: flex;
-  justify-content: center ;
+  justify-content: center;
   /* background-color: #ededed; */
   border-radius: 1%;
   display: grid;
-  grid-template-columns: repeat(auto-fit ,minmax(250px,1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   grid-row-gap: 3rem;
   grid-column-gap: 3rem;
   max-width: 1170px;
   width: 90vw;
-
 }
 
-.product{
+.product {
   border-radius: 5px;
   display: flex;
   flex-direction: column;
@@ -34,49 +33,113 @@ body{
   /* padding: 5px; */
   background-color: blue;
 }
-.product img{
+.product img {
   width: 100%;
   height: auto;
 }
-.product-decription{
+.product-decription {
   color: #ccc;
   display: flex;
   justify-content: space-between;
-  padding: 5px ;
+  padding: 5px;
 }
-.container{
+.container {
   display: flex;
   justify-content: center;
   margin-top: 10px;
 }
 
-.btn{
+.btn {
   border: none;
   outline: none;
   padding: 3px 6px;
-  color: 
-  #4f46e5;
+  color: #4f46e5;
   background-color: rgb(15, 207, 221);
   border-radius: 10%;
   cursor: pointer;
 }
-input:focus{
-border: 1px solid blue;
+input:focus {
+  border: 1px solid blue;
 }
 
-button:disabled{
+button:disabled {
   cursor: not-allowed;
   background-color: grey;
 }
 
+.profile {
+  text-align: center;
+}
 
-.footer{
+.checkout {
+  display: flex;
+  justify-content: space-around;
+}
+
+.userCheckout {
+  background-color: grey;
+  padding: 3rem;
+  margin-top: 10px;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.userCheckout p {
+  margin: 10px 10px;
+  color: #211e57;
+  font-weight: 600;
+}
+.userCheckout span {
+  color: #ffff;
+  font-weight: 700;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  margin-right: 7px;
+}
+.cartCheckout {
+  background-color: grey;
+  width: 60%;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  padding: 20px;
+}
+
+  .cartCheckout div{
+    position: relative;
+    width: 100%;
+    margin-top: 20px;
+    font-size: 90%;
+  }
+  .cartCheckout img{
+    width:12%;
+    /* position: absolute; */
+    right: 10%;
+    top: -50%;
+    /* margin-bottom: 10px; */
+
+  }
+.cartCheckout span{
+  color: #211e57;
+  font-weight: 500;
+}
+
+.boxCart{
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.footer {
   margin-top: 10px;
   height: 2rem;
   width: 100%;
   background-color: black;
   color: white;
-  position:absolute;
-  bottom: -10;
+
   
 }
